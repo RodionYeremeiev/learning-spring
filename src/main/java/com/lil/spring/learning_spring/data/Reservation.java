@@ -1,10 +1,9 @@
 package com.lil.spring.learning_spring.data;
 
 import jakarta.persistence.*;
+import java.sql.Date;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "RESERVATION")
@@ -17,13 +16,13 @@ public class Reservation {
     private long id;
 
     @Column(name = "ROOM_ID")
-    private int roomId;
+    private long roomId;
 
     @Column(name = "GUEST_ID")
-    private int guestId;
+    private long guestId;
 
     @Column(name = "RES_DATE")
-    private LocalDateTime date;
+    private Date reservationDate;
 
     @Override
     public String toString() {
@@ -31,7 +30,7 @@ public class Reservation {
                 "id=" + id +
                 ", roomId=" + roomId +
                 ", guestId=" + guestId +
-                ", date=" + date +
+                ", date=" + reservationDate +
                 '}';
     }
 }
