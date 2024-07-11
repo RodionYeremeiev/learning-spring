@@ -1,14 +1,13 @@
 package com.lil.spring.learning_spring.data;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 @Entity
 @Table(name = "ROOM")
-@Getter
-@Setter
+@Data
 public class Room {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ROOM_ID")
@@ -23,13 +22,4 @@ public class Room {
     @Column(name = "BED_INFO")
     private String bedInfo;
 
-    @Override
-    public String toString() {
-        return "Room{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", roomNumber='" + roomNumber + '\'' +
-                ", bedInfo='" + bedInfo + '\'' +
-                '}';
-    }
 }
