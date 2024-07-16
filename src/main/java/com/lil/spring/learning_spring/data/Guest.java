@@ -9,8 +9,8 @@ import lombok.Data;
 public class Guest {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "GUEST_ID")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long guestId;
 
     @Column(name = "FIRST_NAME")
@@ -20,7 +20,7 @@ public class Guest {
     private String lastName;
 
     @Column(name = "EMAIL_ADDRESS")
-    private String email;
+    private String emailAddress;
 
     @Column(name = "ADDRESS")
     private String address;
