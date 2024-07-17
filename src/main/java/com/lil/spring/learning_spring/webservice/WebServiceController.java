@@ -28,17 +28,27 @@ public class WebServiceController {
     @GetMapping("/guests")
     public List<Guest> getGuests(){
         return this.reservationService.getHotelGuests();
+        /*
+        curl http://localhost:8080/api/guests
+
+        */
     }
 
     @PostMapping("/guests")
     @ResponseStatus(HttpStatus.CREATED)
     public void addGuest(@RequestBody Guest guest) {
         this.reservationService.addGuest(guest);
+         /*
+         curl -X POST http://localhost:8080/api/guests -H 'Content-Type: application/json' -d '{"lastName":"Zenith", "firstName":"Adam"}'
+         */
     }
 
     @GetMapping("/rooms")
     public List<Room> getRooms(){
         return this.reservationService.getRooms();
+        /*
+        curl http://localhost:8080/api/rooms
+         */
     }
 
 }
